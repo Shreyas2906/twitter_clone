@@ -1,0 +1,12 @@
+<!-- app/views/tweets/new.html.erb -->
+<h1>New Tweet</h1>
+
+<div class="container">
+  <%= render 'form', tweet: @tweet %>
+</div>
+
+<div class="fixed-bottom m-3">
+  <%= link_to tweets_path, class: "btn btn-secondary float-start" do %>
+    Back
+  <% end %>
+</div>
