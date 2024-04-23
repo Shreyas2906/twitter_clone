@@ -4,8 +4,15 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def search
-    @users = User.where("email LIKE ?", "%#{params[:q]}%")
-    render :index
+  def follow
+    @user = User.find(params[:id])
+    current_user.followings << @user
+    redirect_to @user
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    current_user.followings.delete(@user)
+    redirect_to @user
   end
 end

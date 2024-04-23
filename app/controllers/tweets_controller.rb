@@ -1,10 +1,15 @@
 # app/controllers/tweets_controller.rb
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @tweets = Tweet.all.order(created_at: :desc)
-    @tweet = Tweet.new
+    # @tweet = Tweet.new
+    if user_signed_in?
+      render :index
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def new

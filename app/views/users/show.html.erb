@@ -1,0 +1,14 @@
+<!-- app/views/users/show.html.erb -->
+<% if @user %>
+  <h1><%= @user.email %></h1>
+
+  <% unless current_user == @user %>
+    <% if current_user.following?(@user) %>
+      <%= button_to "Unfollow", unfollow_user_path(@user), method: :delete, class: "btn btn-primary" %>
+    <% else %>
+      <%= button_to "Follow", follow_user_path(@user), method: :post, class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to "Back", root_path, class: "btn btn-secondary mb-3" %>

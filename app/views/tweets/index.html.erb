@@ -1,12 +1,9 @@
 <!-- app/views/tweets/index.html.erb -->
-<h1>Tweets</h1>
-
 <div id="tweets">
   <%= render @tweets %>
 </div>
 
-<div class="fixed-bottom m-3">
-  <%= link_to new_tweet_path, class: "btn btn-primary float-end" do %>
-    <i class="bi bi-plus"></i>
-  <% end %>
-</div>
+<!-- "+" Button -->
+<a href="<%= new_tweet_path %>" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3">
+  <i class="bi bi-plus"></i> <!-- Plus Icon -->
+</a>
