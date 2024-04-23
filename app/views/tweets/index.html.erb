@@ -1,4 +1,15 @@
 <!-- app/views/tweets/index.html.erb -->
+<h1>Tweets</h1>
+
+<%= form_with(url: tweets_path, method: :get, local: true) do |form| %>
+  <div class="input-group">
+    <%= form.text_field :q, class: "form-control", placeholder: "Search tweets by content" %>
+    <button type="submit" class="btn btn-outline-secondary">
+      <i class="bi bi-search"></i> <!-- Magnifier Icon -->
+    </button>
+  </div>
+<% end %>
+
 <div id="tweets">
   <%= render @tweets %>
 </div>

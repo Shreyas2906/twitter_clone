@@ -1,15 +1,14 @@
-# app/controllers/tweets_controller.rb
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @tweets = Tweet.all.order(created_at: :desc)
-    # @tweet = Tweet.new
     if user_signed_in?
-      render :index
+      following_ids = current_user.followings.pluck(:id)
+      @tweets = Tweet.where(user_id: following_ids).order(created_at: :desc)
     else
       redirect_to new_user_session_path
     end
+    @tweet = Tweet.new
   end
 
   def new

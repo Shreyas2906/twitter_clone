@@ -5,20 +5,16 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version= Ruby 3.0.0
+*  Rails 6.0.6.1
+* Database SQLite3
+* Database creation = rails db:migrate
+* GIT REPO = git clone https://github.com/Shreyas2906/twitter_clone.git
+* cd twitter_clone
+* Run rails s
 
-* System dependencies
+* signup user1
+* signup user2 
 
-* Configuration
+* srearch user and follow tweets will list
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
