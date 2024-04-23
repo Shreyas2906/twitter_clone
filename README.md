@@ -16,5 +16,5 @@ Things you may want to cover:
 * signup user1
 * signup user2 
 
-* srearch user and follow tweets will list
+* search user and follow tweets will list
 
