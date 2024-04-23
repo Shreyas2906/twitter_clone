@@ -10,7 +10,7 @@
     <% end %>
     <span class="author"><%= tweet.user&.email || 'Unknown user' %></span>
     <% if tweet.user == current_user %>
-      <%= link_to "Edit", edit_tweet_path(tweet), class: "edit_tweet btn btn-sm btn-primary", remote: true %>
+      <%= link_to "Edit", edit_tweet_path(tweet), class: "edit_tweet btn btn-sm btn-primary" %>
       <%= link_to "Delete", tweet_path(tweet), method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" } %>
     <% end %>
   </div>

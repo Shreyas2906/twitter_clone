@@ -1,0 +1,4 @@
+// app/views/tweets/edit.js.erb
+
+$('#edit-tweet-modal .modal-body').html('<%= j(render "form", tweet: @tweet) %>');
+$('#edit-tweet-modal').modal('show');

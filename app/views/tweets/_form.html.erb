@@ -1,5 +1,6 @@
 <!-- app/views/tweets/_form.html.erb -->
-<%= form_with model: tweet, remote: true, html: { multipart: true } do |form| %>
+
+<%= form_with(model: tweet, remote: true, html: { multipart: true }) do |form| %>
   <div class="mb-3">
     <%= form.label :content, "Content" %>
     <%= form.text_area :content, placeholder: "What's happening?", required: true, class: "form-control" %>
@@ -12,5 +13,9 @@
     <%= form.label :video, "Video" %>
     <%= form.file_field :video, class: "form-control" %>
   </div>
-  <%= form.submit "Tweet", class: "btn btn-primary" %>
+  <% if tweet.new_record? %>
+    <%= form.submit "Tweet", class: "btn btn-primary" %>
+  <% else %>
+    <%= form.submit "Update Tweet", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
